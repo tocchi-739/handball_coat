@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+
+:root {
+  --main-size: 29vw;
+}
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+header {
+  padding: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-nav {
+  display: flex;
+  font-size: 20px;
+  z-index: 1400;
+}
+.header-nav li {
+  padding: 20px;
+  cursor: pointer;
+}
+.move {
+  width: calc(var(--main-size) / 12);
+  height: calc(var(--main-size) / 12);
+  border-radius: 50%;
+  cursor: move;
+  z-index: 1500;
+  position: absolute;
+}
+.drag {
+  z-index: 1450;
+}
+.person {
+  background: rgb(255, 43, 43);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 2px solid #fff;
+}
+.blue {
+  background: rgb(43, 64, 255);
+}
+.box-wrapper {
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  padding: 10px;
+  z-index: 1400;
+}
+.item-wrapper {
+  position: relative;
+  width: calc(var(--main-size) / 5 * 3);
+}
+@media screen and (max-width: 500px) {
+  .item-wrapper {
+    width: 50%;
+  }
+  .box-wrapper {
+    flex-wrap: wrap;
+  }
+  .box-wrapper .item-wrapper:nth-child(2) {
+    order: 1;
+  }
+  .box-wrapper .item-wrapper:nth-child(3) {
+    order: 2;
+  }
+}
+.item-wrapper .person:first-child {
+  background: rgb(10, 146, 15);
+}
+.item-wrapper > *:nth-child(2) {
+  left: calc(var(--main-size) / 8);
+}
+.item-wrapper > *:nth-child(3) {
+  left: calc(var(--main-size) / 8 * 2);
+}
+.item-wrapper > *:nth-child(4) {
+  left: calc(var(--main-size) / 8 * 3);
+}
+.item-wrapper > *:nth-child(5) {
+  top: calc(var(--main-size) / 8);
+}
+.item-wrapper > *:nth-child(6) {
+  top: calc(var(--main-size) / 8);
+  left: calc(var(--main-size) / 8);
+}
+.item-wrapper > *:nth-child(7) {
+  top: calc(var(--main-size) / 8);
+  left: calc(var(--main-size) / 8 * 2);
+}
+.item-wrapper > *:nth-child(8) {
+  top: calc(var(--main-size) / 8);
+  left: calc(var(--main-size) / 8 * 3);
+}
+.item-wrapper > *:nth-child(9) {
+  top: calc(var(--main-size) / 8 * 2);
+}
+.item-wrapper > *:nth-child(10) {
+  top: calc(var(--main-size) / 8 * 2);
+  left: calc(var(--main-size) / 8);
+}
+.coat-wrapper {
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 242, 58, 1),
+    rgba(255, 213, 110, 1) 0% 94%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--main-size) / 10);
+}
+.coat {
+  width: var(--main-size);
+  height: var(--main-size);
+  background: rgb(202, 240, 255);
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+}
+.line-6m {
+  position: absolute;
+  top: calc(var(--main-size) / 8);
+  z-index: 10;
+}
+.line-6m .upper {
+  height: calc(var(--main-size) / 10 * 3);
+  width: calc(var(--main-size) / 10 * 3);
+  border-radius: 0 100% 0 0;
+  background: rgb(255, 245, 104);
+}
+.line-6m .middle {
+  height: calc(var(--main-size) / 20 * 3);
+  width: calc(var(--main-size) / 10 * 3);
+  background: rgb(255, 245, 104);
+}
+.line-6m .lower {
+  height: calc(var(--main-size) / 10 * 3);
+  width: calc(var(--main-size) / 10 * 3);
+  border-radius: 0 0 100% 0;
+  background: rgb(255, 245, 104);
+}
+.line-9m {
+  position: absolute;
+  top: calc(var(--main-size) / -40);
+}
+.line-9m .upper {
+  height: calc(var(--main-size) / 100 * 45);
+  width: calc(var(--main-size) / 100 * 45);
+  border-radius: 0 100% 0 0;
+  background: rgb(71, 74, 254);
+}
+.line-9m .middle {
+  height: calc(var(--main-size) / 20 * 3);
+  width: calc(var(--main-size) / 100 * 45);
+  background: rgb(71, 74, 254);
+}
+.line-9m .lower {
+  height: calc(var(--main-size) / 100 * 45);
+  width: calc(var(--main-size) / 100 * 45);
+  border-radius: 0 0 100% 0;
+  background: rgb(71, 74, 254);
+}
+/* right */
+.line-6m.right {
+  right: 0;
+}
+.line-6m.right .upper {
+  border-radius: 100% 0 0 0;
+}
+.line-6m.right .lower {
+  border-radius: 0 0 0 100%;
+}
+.line-9m.right {
+  right: 0;
+}
+.line-9m.right .upper {
+  border-radius: 100% 0 0 0;
+}
+.line-9m.right .lower {
+  border-radius: 0 0 0 100%;
+}
+.goal {
+  height: calc(var(--main-size) / 20 * 3);
+  width: calc(var(--main-size) / 20);
+  background: white;
+  border: 1px solid #000;
+}
+#reset-btn {
+  cursor: pointer;
+  padding: 3px;
+  border: 1px solid #000;
+  display: inline-block;
+}
