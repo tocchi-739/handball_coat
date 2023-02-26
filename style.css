@@ -2,8 +2,11 @@
   margin: 0;
   padding: 0;
 }
-body { 
-  overflow-y: hidden;
+html {
+  overflow: hidden;
+}
+body {
+  overflow: hidden;
 }
 ul {
   list-style: none;
