@@ -1,7 +1,7 @@
 let prev;
 
 function setup() {
-  createCanvas(windowWidth, (windowWidth / 10) * 4);
+  createCanvas(windowWidth, (windowWidth / 10) * 9);
   strokeWeight(4);
   stroke(0);
   noFill();
