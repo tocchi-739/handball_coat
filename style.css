@@ -213,3 +213,8 @@ header {
   border: 1px solid #000;
   display: inline-block;
 }
+
+.half > .goal {
+  width: calc(var(--main-size) / 20 * 3);
+  height: calc(var(--main-size) / 20);
+}
